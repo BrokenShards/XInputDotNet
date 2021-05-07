@@ -1,7 +1,9 @@
-XInputDotNet
-============
+# XInputDotNet
+XinputDotNet is a C# wrapper around XInput, works with any Mono or .NET application.
 
-C# wrapper around XInput, works with any Mono or .NET application (eg. Unity3D).
+## NOTE
+This is a modified version of speps' XInputDotNet repository aimed at .Net 5 with the Unity3D content and XInputReporter removed.
+The original repository can be found here: found here: https://github.com/speps/XInputDotNet.
 
 ### What is XInput?
 
@@ -13,8 +15,6 @@ C# wrapper around XInput, works with any Mono or .NET application (eg. Unity3D).
 
 ### Ready to go !
 
-Pre-built binaries are available from the [releases tab](https://github.com/speps/XInputDotNet/releases) :
-
 * **XInputDotNetPure.dll**, .NET assembly containing the [GamePad](http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.input.gamepad.aspx) class
     - You need to add a reference to this one in your C# project for example
 * **XInputInterface.dll**, utility DLL which makes the calls to XInput
@@ -22,51 +22,11 @@ Pre-built binaries are available from the [releases tab](https://github.com/spep
 
 ### Examples
 
-Some examples are available in this repository :
-
+An example is available in this repository:
 * **XInputDemo.exe**, small console application for the most simple use of the API
-* **XInputReporter.exe**, visual debugging aid for seeing the values from the controller
-* **XInputUnity**, Unity 4 project rotating a cube with the pad and changing colors
 
-### Using with Unity
-
-![Unity](https://raw.github.com/speps/XInputDotNet/master/Screenshot.jpg)
-
-* Download the latest `XInputDotNet.unityPackage` from the [releases tab](https://github.com/speps/XInputDotNet/releases)
-* Open the menu Assets > Import Package > Custom Package and select the package you just downloaded
-* See XInputTestCS.cs for a basic usage example
-
-### Building errors
-
-#### error CS1704: An assembly with the same name `XInputDotNetPure' has already been imported.
-
-If you get this error, or a similar one, make sure the settings for each file matches the settings below.
-
-For `Plugins\x86\XInputInterface.dll`
-
-![Plugin settings for x86 DLLs](https://raw.github.com/speps/XInputDotNet/master/SettingsX86.jpg)
-
-For `Plugins\x86_64\XInputInterface.dll`
-
-![Plugin settings for x86_64 DLLs](https://raw.github.com/speps/XInputDotNet/master/SettingsX64.jpg)
-
-For `Plugins\XInputDotNetPure.dll`
-
-![Plugin settings for AnyCPU DLLs](https://raw.github.com/speps/XInputDotNet/master/SettingsAnyCPU.jpg)
-
-#### <a name="free"></a>Special instructions for Free version of Unity
-
-NOTE: this is needed only for Unity 4, Unity 5 seems to have the right behaviour
-
-* Import the .unityPackage as described above
-* Copy `[Project Folder]\Assets\Plugins\x86\XInputInterface.dll` to `[Project Folder]\XInputInterface.dll`
-* **Making a Build does NOT require to copy `XInputInterface.dll` in the same folder the your game .exe file**
-
-**NOTE** : you may see this error message but it should still work as expected, the message won't appear in a Build
-
-![License Error Message](https://raw.github.com/speps/XInputDotNet/master/LicenseError.jpg)
 
 ### Notes
 
-* Under Windows XP, you'll need special drivers for your Xbox 360 Controller. You can find them at this address : [XBox 360 Controller for Windows Software](http://www.microsoft.com/en-us/download/details.aspx?id=34001)
+* Under Windows XP, you'll need special drivers for your Xbox 360 Controller. You can find them at this address: [XBox 360 Controller for Windows Software](http://www.microsoft.com/en-us/download/details.aspx?id=34001)
 * You'll need the latest DirectX SDK to compile it, the binaries were built with the June 2010 version.

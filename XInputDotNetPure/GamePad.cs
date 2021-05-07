@@ -5,7 +5,7 @@ namespace XInputDotNetPure
 {
     class Imports
     {
-        internal const string DLLName = "XInputInterface";
+        internal const string DLLName = "XInputInterface.dll";
 
         [DllImport(DLLName)]
         public static extern uint XInputGamePadGetState(uint playerIndex, out GamePadState.RawState state);
@@ -342,8 +342,7 @@ namespace XInputDotNetPure
 
         public static GamePadState GetState(PlayerIndex playerIndex, GamePadDeadZone deadZone)
         {
-            GamePadState.RawState state;
-            uint result = Imports.XInputGamePadGetState((uint)playerIndex, out state);
+            uint result = Imports.XInputGamePadGetState( (uint)playerIndex, out GamePadState.RawState state );
             return new GamePadState(result == Utils.Success, state, deadZone);
         }
 
